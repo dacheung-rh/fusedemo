@@ -7,6 +7,7 @@ This fuse demo application developed uing camel springboot.  It consumed CDC kaf
 Insert cdc history to MongoDB collection
 ```
 $ ./mvnw -Dtest=FuseDemoRouteBuilderTest#testKafkaConsumerCDCRoute clean test
+```
 
 
 ## build with testKafkaConsumerCUDRoute test
@@ -14,16 +15,16 @@ $ ./mvnw -Dtest=FuseDemoRouteBuilderTest#testKafkaConsumerCDCRoute clean test
 Insert / Update / Delete of CDC to MongoDB collection
 ```
 $ ./mvnw -Dtest=FuseDemoRouteBuilderTest#testKafkaConsumerCDCRoute clean test
+```
 
 ## Package FuseDemoRouteBuilder
 ------------------------------------------------
 ```
 $ ./mvnw clean package -DskipTests=true
+```
 
 ## Run Fuse Springboot app
 ------------------------------------------------
 ```
 $ java -jar target/fuse-demo-service-0.0.1-SNAPSHOT.jar
-
-
-
+```
