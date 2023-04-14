@@ -1,0 +1,5 @@
+com/redhat/fusedemo/config/MongoConfig.class
+com/redhat/fusedemo/Application.class
+com/redhat/fusedemo/route/FuseDemoCDCRouteBuilder.class
+com/redhat/fusedemo/route/FuseDemoCUDRouteBuilder.class
+com/redhat/fusedemo/config/MongoProperties.class
