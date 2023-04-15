@@ -44,17 +44,18 @@ This fuse demo application developed using camel spring boot.  It consumed CDC k
    - kafka topics
 
 ## Compile requirements
-1) JDK 11 install with JAVA_HOME environment
-2) Maven 3.8 installed
+1) OpenJDK 11 or above install with JAVA_HOME environment
+   - [Install OpenJDK]([#getting-started](https://developers.redhat.com/blog/2018/12/10/install-java-rhel8))
+3) Maven 3.8 installed
 
-## build with testKafkaConsumerCDCRoute test
+## Build with testKafkaConsumerCDCRoute test
 ------------------------------------------------
 Insert cdc history to MongoDB collection
 ```
 ./mvnw -Dtest=FuseDemoRouteBuilderTest#testKafkaConsumerCDCRoute clean test
 ```
 
-## build with testKafkaConsumerCUDRoute test
+## Build with testKafkaConsumerCUDRoute test
 ------------------------------------------------
 Insert / Update / Delete of CDC to MongoDB collection
 ```
