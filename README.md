@@ -44,8 +44,7 @@ This fuse demo application developed using camel spring boot.  It consumed CDC k
    - kafka topics
 
 ## Compile requirements
-1) OpenJDK 11 or above install with JAVA_HOME environment
-   - [Install OpenJDK on RHEL8]: https://developers.redhat.com/blog/2018/12/10/install-java-rhel8
+1) OpenJDK 11 or above install with JAVA_HOME environment [Install OpenJDK on RHEL8]: https://developers.redhat.com/blog/2018/12/10/install-java-rhel8
 3) Maven 3.8 installed
 
 ## Build with testKafkaConsumerCDCRoute test
