@@ -38,7 +38,8 @@ This fuse demo application developed using camel springboot.  It consumed CDC ka
 2) Kafka server with MySQL debezium connector configured
 3) MongoDB available to update target
 4) Update the src/main/resources/application.properties file
-   _ correct databases credentials and kafka topics
+   -database servers and credentials
+   -kafka topics
 
 ## build with testKafkaConsumerCDCRoute test
 ------------------------------------------------
