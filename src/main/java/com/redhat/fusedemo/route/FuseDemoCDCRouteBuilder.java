@@ -32,23 +32,23 @@ public class FuseDemoCDCRouteBuilder extends RouteBuilder {
         .log("CDC 02 data transferred");
 
         // table 3
-        // from("kafka:{{kafka.topic.cdc-table03}}?groupId={{kafka.topic.cdcgroup.id}}")
-        // .routeId("kafka-consumer-cdc-route-03")
-        // .log("History Received 03: ${body}")
-        // .to("mongodb:mongoBean?database={{spring.data.mongodb.database}}&collection=history.{{kafka.topic.cdc-table03}}&operation=insert")
-        // .to("direct:logger-cdc-03");
+        from("kafka:{{kafka.topic.cdc-table03}}?groupId={{kafka.topic.cdcgroup.id}}")
+        .routeId("kafka-consumer-cdc-route-03")
+        .log("History Received 03: ${body}")
+        .to("mongodb:mongoBean?database={{spring.data.mongodb.database}}&collection=history.{{kafka.topic.cdc-table03}}&operation=insert")
+        .to("direct:logger-cdc-03");
 
-        // from("direct:logger-cdc-03")
-        // .log("CDC 03 data transferred");
+        from("direct:logger-cdc-03")
+        .log("CDC 03 data transferred");
 
         // table 4
-        // from("kafka:{{kafka.topic.cdc-table04}}?groupId={{kafka.topic.cdcgroup.id}}")
-        // .routeId("kafka-consumer-cdc-route-04")
-        // .log("History Received 04: ${body}")
-        // .to("mongodb:mongoBean?database={{spring.data.mongodb.database}}&collection=history.{{kafka.topic.cdc-table04}}&operation=insert")
-        // .to("direct:logger-cdc-04");
+        from("kafka:{{kafka.topic.cdc-table04}}?groupId={{kafka.topic.cdcgroup.id}}")
+        .routeId("kafka-consumer-cdc-route-04")
+        .log("History Received 04: ${body}")
+        .to("mongodb:mongoBean?database={{spring.data.mongodb.database}}&collection=history.{{kafka.topic.cdc-table04}}&operation=insert")
+        .to("direct:logger-cdc-04");
 
         // from("direct:logger-cdc-04")
-        // .log("CDC 04 data transferred");
+        .log("CDC 04 data transferred");
     }
 }
