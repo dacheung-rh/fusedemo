@@ -1,6 +1,6 @@
 # CDC Fuse Demo
 
-This fuse demo application developed using camel springboot.  It consumed CDC kafka topics and update the change history to MongoDB.
+This fuse demo application developed using camel spring boot.  It consumed CDC kafka topics and updates the change history to MongoDB.
 
 ![Screenshot of cdc flow.](./images/cdc_amq_fuse_demo.png)
 
@@ -67,7 +67,7 @@ Insert / Update / Delete of CDC to MongoDB collection
 ./mvnw clean package -DskipTests=true
 ```
 
-## Run Fuse Springboot app
+## Run Fuse Spring Boot app
 ------------------------------------------------
 ```
 java -jar target/fuse-demo-service-0.0.1-SNAPSHOT.jar
