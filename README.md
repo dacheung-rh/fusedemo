@@ -43,13 +43,16 @@ This fuse demo application developed using camel springboot.  It consumed CDC ka
    - database servers and credentials
    - kafka topics
 
+## Compile requirements
+1) JDK 11 install with JAVA_HOME environment
+2) Maven 3.8 installed
+
 ## build with testKafkaConsumerCDCRoute test
 ------------------------------------------------
 Insert cdc history to MongoDB collection
 ```
 ./mvnw -Dtest=FuseDemoRouteBuilderTest#testKafkaConsumerCDCRoute clean test
 ```
-
 
 ## build with testKafkaConsumerCUDRoute test
 ------------------------------------------------
