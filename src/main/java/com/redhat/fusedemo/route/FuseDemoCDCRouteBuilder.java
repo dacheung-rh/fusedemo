@@ -48,7 +48,7 @@ public class FuseDemoCDCRouteBuilder extends RouteBuilder {
         .to("mongodb:mongoBean?database={{spring.data.mongodb.database}}&collection=history.{{kafka.topic.cdc-table04}}&operation=insert")
         .to("direct:logger-cdc-04");
 
-        // from("direct:logger-cdc-04")
+        from("direct:logger-cdc-04")
         .log("CDC 04 data transferred");
     }
 }
