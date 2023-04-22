@@ -17,13 +17,9 @@ This fuse demo application developed using camel spring boot.  It consumes CDC k
     │   │   └── com
     │   │       └── redhat
     │   │           └── fusedemo
-    │   │               ├── Application.java
-    │   │               ├── config
-    │   │               │   ├── MongoConfig.java
-    │   │               │   └── MongoProperties.java
-    │   │               └── route
-    │   │                   ├── FuseDemoCDCRouteBuilder.java
-    │   │                   └── FuseDemoCUDRouteBuilder.java
+    │   │               ├── FusedemoApplication.java
+    │   │               ├── FuseDemoCDCRouteBuilder.java
+    │   │               └── FuseDemoCUDRouteBuilder.java
     │   └── resources
     │       └── application.properties
     └── test
