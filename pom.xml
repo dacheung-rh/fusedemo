@@ -2,138 +2,115 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.redhat.fusedemo</groupId>
-	<artifactId>fuse-demo-service</artifactId>
+	<groupId>com.redhat</groupId>
+	<artifactId>fusedemo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>fuse-demo-service</name>
-	<description>Fuse Demo Service</description>
+	<name>fusedemo</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>11</java.version>
+	    <spring.boot-version>2.6.10</spring.boot-version>
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-		<fuse.version>7.10.0.fuse-sb2-7_10_2-00011-redhat-00002</fuse.version>
 	</properties>
-	<dependencyManagement>
+
+  	<dependencyManagement>
 		<dependencies>
-		  <dependency>
-			<groupId>org.jboss.redhat-fuse</groupId>
-			<artifactId>fuse-springboot-bom</artifactId>
-			<version>${fuse.version}</version>
+		    <!-- Spring Boot BOM -->
+			<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-dependencies</artifactId>
+			<version>${spring.boot-version}</version>
 			<type>pom</type>
 			<scope>import</scope>
-		  </dependency>
+			</dependency>
+			<!-- Camel BOM -->
+			<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-spring-boot-bom</artifactId>
+			<version>3.18.6</version>
+			<type>pom</type>
+			<scope>import</scope>
+			</dependency>
 		</dependencies>
-	  </dependencyManagement>
+	</dependencyManagement>
+
 	<dependencies>
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+		<!-- Spring Boot -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
+
+		<!-- Camel -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-undertow</artifactId>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-spring-boot-starter</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-ftp-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-bindy-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-jdbc-starter</artifactId>
-		  </dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-kafka-starter</artifactId>
 		</dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
-            <artifactId>camel-mongodb-starter</artifactId>
-        </dependency>
+            <artifactId>camel-mongodb</artifactId>
+ 			<version>3.18.6</version>
+        </dependency>		
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-jsonpath</artifactId>
+ 			<version>3.18.6</version>
         </dependency>
+
+ 		<!-- Testing -->
 		<dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-test-spring</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-mongodb</artifactId>
-        </dependency>		
-		<!-- TODO: Add camel-kafka-starter dependency here-->
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-kafka-starter</artifactId>
-		</dependency>
 	</dependencies>
-	<repositories>
-		<repository>
-		  <id>red-hat-ga-repository</id>
-		  <url>https://maven.repository.redhat.com/ga</url>
-		</repository>
-	  </repositories>
-	  <pluginRepositories>
-		<pluginRepository>
-		  <id>red-hat-ga-repository</id>
-		  <url>https://maven.repository.redhat.com/ga</url>
-		</pluginRepository>
-	  </pluginRepositories>
+
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring.boot-version}</version>
+				<executions>
+				<execution>
+					<goals>
+					<goal>repackage</goal>
+					</goals>
+				</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
 					<source>11</source>
 					<target>11</target>
-				  </configuration>
-			  </plugin>
-			  <plugin>
-				<groupId>org.jboss.redhat-fuse</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${fuse.version}</version>
-				<executions>
-				  <execution>
-					<goals>
-					  <goal>repackage</goal>
-					</goals>
-				  </execution>
-				</executions>
-			  </plugin>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
