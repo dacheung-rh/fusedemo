@@ -11,8 +11,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
-	    <spring.boot-version>2.6.10</spring.boot-version>
-	    <camel.version>3.18.3</camel.version>
+	        <spring.boot-version>2.6.10</spring.boot-version>
+	        <camel.version>3.18.3</camel.version>
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 	</properties>
 
@@ -90,18 +90,6 @@
 		</dependency>
 	</dependencies>
 
-	<repositories>
-		<repository>
-			<id>red-hat-ga-repository</id>
-			<url>https://maven.repository.redhat.com/ga</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>red-hat-ga-repository</id>
-			<url>https://maven.repository.redhat.com/ga</url>
-		</pluginRepository>
-	</pluginRepositories>
 	<build>
 		<plugins>
 			<plugin>
